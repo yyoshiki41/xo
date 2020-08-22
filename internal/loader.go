@@ -51,7 +51,7 @@ type TypeLoader struct {
 	Schema          func(*ArgType) (string, error)
 	ParseType       func(*ArgType, string, bool) (int, string, string)
 	EnumList        func(models.XODB, string) ([]*models.Enum, error)
-	EnumValueList   func(models.XODB, string, string) ([]*models.EnumValue, error)
+	EnumValueList   func(models.XODB, string, string, string) ([]*models.EnumValue, error)
 	ProcList        func(models.XODB, string) ([]*models.Proc, error)
 	ProcParamList   func(models.XODB, string, string) ([]*models.ProcParam, error)
 	TableList       func(models.XODB, string, string) ([]*models.Table, error)
@@ -310,7 +310,7 @@ func (tl TypeLoader) LoadEnums(args *ArgType) (map[string]*Enum, error) {
 	enumMap := map[string]*Enum{}
 	for _, e := range enumList {
 		enumTpl := &Enum{
-			Name:              SingularizeIdentifier(e.EnumName),
+			Name:              SingularizeIdentifier(e.TableName) + SingularizeIdentifier(e.EnumName),
 			Schema:            args.Schema,
 			Values:            []*EnumValue{},
 			Enum:              e,
@@ -342,7 +342,7 @@ func (tl TypeLoader) LoadEnumValues(args *ArgType, enumTpl *Enum) error {
 	var err error
 
 	// load enum values
-	enumValues, err := tl.EnumValueList(args.DB, args.Schema, enumTpl.Enum.EnumName)
+	enumValues, err := tl.EnumValueList(args.DB, args.Schema, enumTpl.Enum.TableName, enumTpl.Enum.EnumName)
 	if err != nil {
 		return err
 	}
@@ -540,6 +540,11 @@ func (tl TypeLoader) LoadColumns(args *ArgType, typeTpl *Type) error {
 			typeTpl.PrimaryKeyFields = append(typeTpl.PrimaryKeyFields, f)
 			// This is retained for backward compatibility in the templates.
 			typeTpl.PrimaryKey = f
+		}
+
+		// set enum type
+		if c.IsEnum {
+			f.Type = SingularizeIdentifier(typeTpl.Table.TableName) + f.Type
 		}
 
 		// append col to template fields
