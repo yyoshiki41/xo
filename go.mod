@@ -1,4 +1,4 @@
-module github.com/yyoshiki41/xo
+module github.com/xo/xo
 
 require (
 	github.com/alexflint/go-arg v1.3.0
