@@ -7,8 +7,8 @@ import (
 
 	"github.com/knq/snaker"
 
-	"github.com/xo/xo/internal"
-	"github.com/xo/xo/models"
+	"github.com/yyoshiki41/xo/internal"
+	"github.com/yyoshiki41/xo/models"
 )
 
 func init() {
