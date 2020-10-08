@@ -10,7 +10,7 @@ type EnumValue struct {
 }
 
 // PgEnumValues runs a custom query, returning results as EnumValue.
-func PgEnumValues(db XODB, schema string, enum string) ([]*EnumValue, error) {
+func PgEnumValues(db XODB, schema string, table string, enum string) ([]*EnumValue, error) {
 	var err error
 
 	// sql query
