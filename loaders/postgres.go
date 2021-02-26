@@ -8,7 +8,7 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/knq/snaker"
+	"github.com/kenshaw/snaker"
 
 	"github.com/yyoshiki41/xo/internal"
 	"github.com/yyoshiki41/xo/models"

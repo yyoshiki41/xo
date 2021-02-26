@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/gedex/inflector"
-	"github.com/knq/snaker"
+	"github.com/kenshaw/snaker"
 	"github.com/pkg/errors"
 
 	"github.com/yyoshiki41/xo/models"
