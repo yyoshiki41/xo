@@ -617,7 +617,14 @@ func (tl TypeLoader) LoadForeignKeys(args *ArgType, tableMap map[string]*Type) (
 
 // LoadTableForeignKeys loads schema foreign key definitions per table.
 func (tl TypeLoader) LoadTableForeignKeys(args *ArgType, tableMap map[string]*Type, typeTpl *Type, fkMap map[string]*ForeignKey) error {
-	var err error
+	includeTables, err := compileREs(args.IncludeTables)
+	if err != nil {
+		return errors.Wrap(err, "--include-tables")
+	}
+	excludeTables, err := compileREs(args.ExcludeTables)
+	if err != nil {
+		return errors.Wrap(err, "--exclude-tables")
+	}
 
 	// load foreign keys
 	foreignKeyList, err := tl.ForeignKeyList(args.DB, args.Schema, typeTpl.Table.TableName)
@@ -626,7 +633,19 @@ func (tl TypeLoader) LoadTableForeignKeys(args *ArgType, tableMap map[string]*Ty
 	}
 
 	// loop over foreign keys for table
+loop:
 	for _, fk := range foreignKeyList {
+		for _, re := range includeTables {
+			if !re.MatchString(fk.RefTableName) {
+				continue loop
+			}
+		}
+		for _, re := range excludeTables {
+			if re.MatchString(fk.RefTableName) {
+				continue loop
+			}
+		}
+
 		var refTpl *Type
 		var col, refCol *Field
 
