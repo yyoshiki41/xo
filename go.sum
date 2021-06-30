@@ -13,9 +13,8 @@ github.com/go-sql-driver/mysql v1.5.0 h1:ozyZYNQW3x3HtqT1jira07DN2PArx2v7/mN66gG
 github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe h1:lXe2qZdvpiX5WZkZR4hgp4KJVfY3nMkvmwbVkpv1rVY=
 github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe/go.mod h1:8vg3r2VgvsThLBIFL93Qb5yWzgyZWhEmBwUJWevAkK0=
-github.com/kenshaw/snaker v0.1.0 h1:h6dvdkBw6Qe1ya/LE9kMa9Y8M3RSAhbELfirZHIFobU=
-github.com/kenshaw/snaker v0.1.0/go.mod h1:0xAAdPB2IwUAxxUZj5ZvPclku2HJBSB7TRcJxvhVwM8=
-github.com/knq/snaker v0.0.0-20181215144011-2bc8a4db4687/go.mod h1:f0Dmq8fkddh8nOsVabYmtOHHdxlq2q4X+LQ1xWQEdUU=
+github.com/kenshaw/snaker v0.1.2 h1:vw+ZtL5YLok+YsRJEvBxHeO1FQyn3cIEfxx1h3hK0kc=
+github.com/kenshaw/snaker v0.1.2/go.mod h1:0xAAdPB2IwUAxxUZj5ZvPclku2HJBSB7TRcJxvhVwM8=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
@@ -36,10 +35,6 @@ github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJy
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/xo/dburl v0.0.0-20200124232849-e9ec94f52bc3 h1:NC3CI7do3KHtiuYhk1CdS9V2qS3jNa7Fs2Afcnnt+IE=
 github.com/xo/dburl v0.0.0-20200124232849-e9ec94f52bc3/go.mod h1:A47W3pdWONaZmXuLZgfKLAVgUY0qvfTRM5vVDKS40S4=
-github.com/xo/xo v0.0.0-20200425011923-7818603ff52b h1:JqP7AnhAmy/Kt9END08+J1YGrOgnhPuCyG0ih4gfiHA=
-github.com/xo/xo v0.0.0-20200425011923-7818603ff52b/go.mod h1:Egf5M4l39fD5nuzA+oG3hcWe5ceALyusPw8sHVMHU/4=
-github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5 h1:3ANIpg9VQB91yCAyY+5dobfm30xQNOG3sCjPoPQo5i8=
-github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5/go.mod h1:GngMELAA694UVFs172352HAA2KQEf4XuETgWmL4XSoY=
 github.com/yyoshiki41/xoutil v0.0.0-20210630133139-e8e5ad2cbb1b h1:eW1JZraGrnHzrUE6g8fgBhY3+brpjTOefsutgUyxLIw=
 github.com/yyoshiki41/xoutil v0.0.0-20210630133139-e8e5ad2cbb1b/go.mod h1:TbU6WMo1abQRBgXX22eAsmt/OPgraRAupYWLIZK6CpI=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
