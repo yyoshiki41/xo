@@ -20,8 +20,8 @@ import (
 	"github.com/yyoshiki41/xo/internal"
 	"github.com/yyoshiki41/xo/models"
 
-	_ "github.com/xo/xoutil"
 	_ "github.com/yyoshiki41/xo/loaders"
+	_ "github.com/yyoshiki41/xoutil"
 )
 
 func main() {
