@@ -9,7 +9,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 
 	"github.com/xo/dburl"
-	"github.com/xo/xoutil"
+	"github.com/yyoshiki41/xoutil"
 
 	"github.com/xo/xo/examples/booktest/sqlite3/models"
 )

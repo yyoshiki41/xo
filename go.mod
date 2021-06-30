@@ -11,7 +11,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/xo/dburl v0.0.0-20200124232849-e9ec94f52bc3
 	github.com/xo/xo v0.0.0-20200425011923-7818603ff52b
-	github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5
+	github.com/yyoshiki41/xoutil v0.0.0-20210630133139-e8e5ad2cbb1b
 	gopkg.in/rana/ora.v4 v4.1.15
 )
 
