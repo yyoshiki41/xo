@@ -22,6 +22,9 @@ type ArgType struct {
 	Append bool `arg:"-a,help:append to existing files"`
 
 	// Suffix is the output suffix for filenames.
+	Prefix string `arg:"--prefix,help:output file prefix"`
+
+	// Suffix is the output suffix for filenames.
 	Suffix string `arg:"-f,help:output file suffix"`
 
 	// SingleFile when toggled changes behavior so that output is to one f ile.

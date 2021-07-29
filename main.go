@@ -160,7 +160,7 @@ func processArgs(args *internal.ArgType) error {
 
 	// determine filename if not previously set
 	if args.Filename == "" {
-		args.Filename = args.Package + args.Suffix
+		args.Filename = args.Prefix + args.Package + args.Suffix
 	}
 
 	// if query mode toggled, but no query, read Stdin.
@@ -244,7 +244,7 @@ func getFile(args *internal.ArgType, t *internal.TBuf) (*os.File, error) {
 	var err error
 
 	// determine filename
-	var filename = strings.ToLower(t.Name) + args.Suffix
+	var filename = args.Prefix + strings.ToLower(t.Name) + args.Suffix
 	if args.SingleFile {
 		filename = args.Filename
 	}

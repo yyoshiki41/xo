@@ -96,7 +96,7 @@ The following are `xo`'s command-line arguments and options:
 
 ```sh
 $ xo --help
-usage: xo [--verbose] [--schema SCHEMA] [--out OUT] [--append] [--suffix SUFFIX] [--single-file] [--package PACKAGE] [--custom-type-package CUSTOM-TYPE-PACKAGE] [--int32-type INT32-TYPE] [--uint32-type UINT32-TYPE] [--ignore-fields IGNORE-FIELDS] [--fk-mode FK-MODE] [--use-index-names] [--use-reversed-enum-const-names] [--query-mode] [--query QUERY] [--query-type QUERY-TYPE] [--query-func QUERY-FUNC] [--query-only-one] [--query-trim] [--query-strip] [--query-interpolate] [--query-type-comment QUERY-TYPE-COMMENT] [--query-func-comment QUERY-FUNC-COMMENT] [--query-delimiter QUERY-DELIMITER] [--query-fields QUERY-FIELDS] [--escape-all] [--escape-schema] [--escape-table] [--escape-column] [--enable-postgres-oids] [--name-conflict-suffix NAME-CONFLICT-SUFFIX] [--template-path TEMPLATE-PATH] DSN
+usage: xo [--verbose] [--schema SCHEMA] [--out OUT] [--append] [--prefix PREFIX] [--suffix SUFFIX] [--single-file] [--package PACKAGE] [--custom-type-package CUSTOM-TYPE-PACKAGE] [--int32-type INT32-TYPE] [--uint32-type UINT32-TYPE] [--ignore-fields IGNORE-FIELDS] [--fk-mode FK-MODE] [--use-index-names] [--use-reversed-enum-const-names] [--query-mode] [--query QUERY] [--query-type QUERY-TYPE] [--query-func QUERY-FUNC] [--query-only-one] [--query-trim] [--query-strip] [--query-interpolate] [--query-type-comment QUERY-TYPE-COMMENT] [--query-func-comment QUERY-FUNC-COMMENT] [--query-delimiter QUERY-DELIMITER] [--query-fields QUERY-FIELDS] [--escape-all] [--escape-schema] [--escape-table] [--escape-column] [--enable-postgres-oids] [--name-conflict-suffix NAME-CONFLICT-SUFFIX] [--template-path TEMPLATE-PATH] DSN
 
 positional arguments:
   dsn                    data source name
@@ -107,6 +107,8 @@ options:
                          schema name to generate Go types for
   --out OUT, -o OUT      output path or file name
   --append, -a           append to existing files
+  --prefix PREFIX
+                         output file prefix
   --suffix SUFFIX, -f SUFFIX
                          output file suffix [default: .xo.go]
   --single-file          toggle single file output
