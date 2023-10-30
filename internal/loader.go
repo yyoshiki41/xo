@@ -545,14 +545,21 @@ func (tl TypeLoader) LoadColumns(args *ArgType, typeTpl *Type) error {
 		ignore := false
 
 		for _, ignoreField := range args.IgnoreFields {
-			if ignoreField == c.ColumnName {
-				// Skip adding this field if user has specified they are not
-				// interested.
-				//
-				// This could be useful for fields which are managed by the
-				// database (e.g. automatically updated timestamps) instead of
-				// via Go code.
-				ignore = true
+			switch v := strings.Split(ignoreField, "."); len(v) {
+			case 2:
+				if v[0] == typeTpl.Table.TableName && v[1] == c.ColumnName {
+					ignore = true
+				}
+			case 1:
+				if v[0] == c.ColumnName {
+					// Skip adding this field if user has specified they are not
+					// interested.
+					//
+					// This could be useful for fields which are managed by the
+					// database (e.g. automatically updated timestamps) instead of
+					// via Go code.
+					ignore = true
+				}
 			}
 		}
 
