@@ -543,7 +543,6 @@ func (tl TypeLoader) LoadColumns(args *ArgType, typeTpl *Type) error {
 	// process columns
 	for _, c := range columnList {
 		ignore := false
-
 		for _, ignoreField := range args.IgnoreFields {
 			switch v := strings.Split(ignoreField, "."); len(v) {
 			case 2:
@@ -562,9 +561,25 @@ func (tl TypeLoader) LoadColumns(args *ArgType, typeTpl *Type) error {
 				}
 			}
 		}
-
 		if ignore {
 			continue
+		}
+
+		if strings.HasPrefix(strings.ToLower(c.DataType), "tinyint") {
+			for _, field := range args.FieldsTinyintAsBool {
+				switch v := strings.Split(field, "."); len(v) {
+				case 2:
+					if strings.EqualFold(v[0], typeTpl.Table.TableName) && strings.EqualFold(v[1], c.ColumnName) {
+						c.DataType = "tinyint(1)"
+						break
+					}
+				case 1:
+					if strings.EqualFold(v[0], c.ColumnName) {
+						c.DataType = "tinyint(1)"
+						break
+					}
+				}
+			}
 		}
 
 		// set col info

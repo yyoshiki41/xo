@@ -43,6 +43,9 @@ type ArgType struct {
 	// Uint32Type is the type to assign those discovered as uint32.
 	Uint32Type string `arg:"--uint32-type,-u,help:Go type to assign to unsigned integers"`
 
+	// FieldsTinyintAsBool is the columns to treat as bools.
+	FieldsTinyintAsBool []string `arg:"--fields-tinyint-as-bool,help:columns to treat as bool"`
+
 	// IgnoreFields allows the user to specify field names which should not be
 	// handled by xo in the generated code.
 	IgnoreFields []string `arg:"--ignore-fields,help:fields to exclude from the generated Go code types"`
