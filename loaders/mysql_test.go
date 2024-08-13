@@ -119,6 +119,30 @@ func Test_MyParseType(t *testing.T) {
 			typ:       "int8",
 			nullable:  false,
 		},
+		{
+			desc:      "nullable timestamp",
+			dt:        "timestamp",
+			precision: -1,
+			nilVal:    "sql.NullTime{}",
+			typ:       "sql.NullTime",
+			nullable:  true,
+		},
+		{
+			desc:      "nullable datetime",
+			dt:        "datetime",
+			precision: -1,
+			nilVal:    "sql.NullTime{}",
+			typ:       "sql.NullTime",
+			nullable:  true,
+		},
+		{
+			desc:      "nullable date",
+			dt:        "date",
+			precision: -1,
+			nilVal:    "sql.NullTime{}",
+			typ:       "sql.NullTime",
+			nullable:  true,
+		},
 	}
 
 	for i, tt := range tests {
